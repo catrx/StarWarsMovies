@@ -1,3 +1,7 @@
-<div class="container">
-  <div>lol</div>
-</div>
+<ngb-toast *ngIf="show" class="toast" header="Click my close icon →" [autohide]="false"
+           (hide)="close()">
+  Vous n'avez pas Internet réessayer plus tard
+</ngb-toast>
+
+<app-movie-select></app-movie-select>
+

@@ -1,0 +1,14 @@
+<ngb-carousel class="myCarousel">
+  <ng-template ngbSlide>
+    <app-movie-details
+      [title]="title"
+      [openingCrawl]="openingCrawl"
+      [dateSortie]="dateSortie"
+      [director]="director"
+      [episodeId]="episodeId"
+    ></app-movie-details>
+  </ng-template>
+  <ng-template ngbSlide>
+    <app-movie-characters [characters]="characters"></app-movie-characters>
+  </ng-template>
+</ngb-carousel>

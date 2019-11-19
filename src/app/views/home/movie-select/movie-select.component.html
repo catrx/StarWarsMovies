@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon3"
+            >Rechercher un film</span
+          >
+        </div>
+        <select class="form-control" id="exampleFormControlSelect1" (change)="onChange($event)">
+          <option value="" selected>Tous les films</option>
+          <option *ngFor="let f of selectValue">{{f}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let f of films" >
+      <app-movie-card
+        [title]="f.title"
+        [dateSortie]="f.release_date"
+        [director]="f.director"
+        [openingCrawl]="f.opening_crawl"
+        [episodeId]="f.episode_id"
+        [characters]="f.characters"
+      ></app-movie-card>
+    </div>
+  </div>
+</div>
+
+<div class="spinner-border text-primary spin" role="status" *ngIf="isLoading">
+  <span class="sr-only">Loading...</span>
+</div>
